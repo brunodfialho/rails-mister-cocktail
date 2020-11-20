@@ -1,16 +1,12 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media-cdn.tripadvisor.com/media/photo-s/19/71/51/02/photo0jpg.jpg);">
-  <div class="container">
-    <h1>Welcome to <strong>Mister cocktails</strong></h1>
-    <p>Create your own cocktail</p>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h1>Create a new cocktail</h1>
+
+      <%= simple_form_for @cocktail do |f| %>
+        <%= f.input :name %>
+        <%= f.button :submit, class: 'btn btn-primary' %>
+      <% end %>
+    </div>
   </div>
 </div>
-
-<div class="container">
-  <%= simple_form_for(@cocktail) do |f|%>
-    <%=f.input :name %>
-    <%=f.input :ingredients %>
-    <%=f.input :doses %>
-    <%=f.submit class:"btn btn-primary"%>
-  <% end %>
-  <%= link_to 'Back to main page', cocktails_path, class:"btn btn-danger" %>
-</div>  
